@@ -15,10 +15,16 @@ build-type:          Simple
 extra-source-files:  ChangeLog.md
 cabal-version:       >=1.10
 
-executable tmp-rAdadf70Ci
+executable project0-exe
   main-is:             Main.hs
   -- other-modules:       
+  default-extensions: TemplateHaskell
+                    , OverloadedStrings
+                    , NoImplicitPrelude
   -- other-extensions:    
-  build-depends:       base >=4.9 && <4.10
+  build-depends: base >=4.9 && <4.10
+               , lens
+               , text
+               , protolude
   -- hs-source-dirs:      
   default-language:    Haskell2010
