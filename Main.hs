@@ -1,5 +1,6 @@
 {-# language TemplateHaskell #-}
 {-# language NoImplicitPrelude #-}
+{-# options_ghc -W -Werror #-}
 
 module Main where
 
