@@ -19,9 +19,19 @@ executable project0-exe
   main-is:             Main.hs
   -- other-modules:       
   ghc-options: -Wall
-  default-extensions: TemplateHaskell
+  default-extensions: NoImplicitPrelude
                     , OverloadedStrings
-                    , NoImplicitPrelude
+                    , FlexibleContexts
+                    , FlexibleInstances
+                    , GeneralizedNewtypeDeriving
+                    , TypeSynonymInstances
+                    , MultiParamTypeClasses
+                    , FunctionalDependencies
+                    , NoMonomorphismRestriction
+                    , GADTs
+                    , BangPatterns
+                    , DeriveGeneric
+                    , ScopedTypeVariables
   -- other-extensions:    
   build-depends: base >=4.9 && <4.10
                , lens
