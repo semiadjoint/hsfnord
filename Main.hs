@@ -16,6 +16,7 @@ makeClassy ''Person
 jojo :: Person
 jojo = Person { _name = "Jojo", _age = 28 }
 
+main :: IO ()
 main = do
   putText "Hello "
   putText $ jojo ^. name
