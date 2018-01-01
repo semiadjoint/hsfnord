@@ -3,4 +3,4 @@
 cabal2nix . > default.nix && \
   nix-shell --run "cabal configure" && \
   exec ag -g hs$ | \
-    entr -s "echo && cabal build && echo Built at $(date --iso-8601=seconds)"
+    entr -s "echo && echo && cabal build && echo Built at $(date --iso-8601=seconds)"
