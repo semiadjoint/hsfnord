@@ -18,6 +18,7 @@ cabal-version:       >=1.10
 executable project0-exe
   main-is:             Main.hs
   -- other-modules:       
+  ghc-options: -Wall
   default-extensions: TemplateHaskell
                     , OverloadedStrings
                     , NoImplicitPrelude
