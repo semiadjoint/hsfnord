@@ -1,4 +1,5 @@
 {-# language TemplateHaskell #-}
+{-# language NoImplicitPrelude #-}
 
 module Main where
 
