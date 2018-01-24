@@ -32,8 +32,7 @@ executable project0-exe
                     , DeriveGeneric
                     , ScopedTypeVariables
   -- other-extensions:    
-  build-depends: base >=4.9 && <4.10
-                 -- The basics for getting work done:
+  build-depends: base >=4 && <5
                , async
                , bytestring
                , containers
@@ -49,7 +48,7 @@ executable project0-exe
                , unix
                , deepseq
                , optparse-applicative
-                 -- Above and beyond the basics:
+
                , protolude
                , lens
   -- hs-source-dirs:      
