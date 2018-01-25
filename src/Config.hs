@@ -4,7 +4,6 @@
 module Config where
 
 import Protolude
-import qualified Prelude
 import Control.Lens
 import Data.Ini.Config
 import Options.Applicative
@@ -35,7 +34,8 @@ loadCfg ::
   -> IO (Either Text Cfg)
 loadCfg filename parser =
   readFile (T.unpack filename) &
-  fmap (\ c -> parseIniFile c parser & first T.pack)
+  fmap (\ c -> parseIniFile c parser &
+         over _Left T.pack)
 
 data CliCfg = CliCfg
   { _cfgFile :: Text
@@ -72,3 +72,9 @@ parseCliConfigFile =
   where
   desc = "an apt app description"
   hdr = "app name - app description"
+
+myid ::
+  forall a .
+  a ->
+  a
+myid = identity

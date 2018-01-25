@@ -17,9 +17,10 @@ executable project0-exe
   main-is: Main.hs
   other-modules: Lib
                , Config
+
   default-language: Haskell2010
   ghc-options: -threaded
-               -dcore-lint
+               
                -Werror
                -Wall
 
