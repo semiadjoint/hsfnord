@@ -1,4 +1,6 @@
 #! /usr/bin/env bash
 
-cabal2nix . > default.nix && \
-  nix-shell --run "cabal configure --enable-tests"
+cabal2nix . > ./nix/default.nix && \
+  nix-shell \
+    --run "cabal configure --enable-tests" \
+    ./nix/shell.nix
