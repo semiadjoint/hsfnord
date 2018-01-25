@@ -2,3 +2,4 @@
 
 :set -XTemplateHaskell
 :set -ddump-splices
+:module Control.Lens
