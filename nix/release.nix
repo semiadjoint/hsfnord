@@ -1,5 +1,5 @@
 let
 pkgs = import <nixpkgs> { };
 in
-  { project0 = pkgs.haskellPackages.callPackage ./default.nix { };
+  { hsfnord = pkgs.haskellPackages.callPackage ./default.nix { };
   }

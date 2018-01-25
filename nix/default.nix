@@ -5,7 +5,7 @@
 , unordered-containers, vector
 }:
 mkDerivation {
-  pname = "project0";
+  pname = "hsfnord";
   version = "0.1.0.0";
   src = ./.;
   isLibrary = true;
