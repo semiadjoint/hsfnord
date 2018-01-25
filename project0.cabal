@@ -20,10 +20,11 @@ executable project0-exe
 
   default-language: Haskell2010
   ghc-options: -threaded
+               -rtsopts=all
+               -with-rtsopts=-N
                
                -Werror
                -Wall
-
                -- Extras
                -fwarn-tabs
                -fwarn-incomplete-uni-patterns
