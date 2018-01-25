@@ -15,25 +15,33 @@ cabal-version:       >=1.10
 executable project0-exe
   hs-source-dirs: src
   main-is: Main.hs
-  other-modules: Lib
-                 Config
+  other-modules: Paths_project0
 
   default-language: Haskell2010
   ghc-options: -threaded
                -rtsopts=all
                -with-rtsopts=-N
                
+               -- Make warnings into errors
                -Werror
+
+               -- Most errors
                -Wall
-               -- Extras
+
+               -- Extra errors
                -fwarn-tabs
                -fwarn-incomplete-uni-patterns
                -fwarn-incomplete-record-updates
                -fwarn-monomorphism-restriction
                -fwarn-implicit-prelude
-               -- -fwarn-missing-local-signatures
-               -- -fwarn-missing-import-lists
+               -fwarn-missing-local-signatures
+               -fwarn-missing-import-lists
                -fhide-source-paths
+               
+               -- Turn back into warnings
+               -Wwarn=missing-local-signatures
+               -Wwarn=missing-import-lists
+               -Wwarn=missing-home-modules
 
   default-extensions: OverloadedStrings
                       FlexibleContexts
@@ -86,5 +94,4 @@ executable project0-exe
                , prometheus
 
                , protolude
-               , lens
 
