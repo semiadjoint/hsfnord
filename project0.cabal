@@ -24,6 +24,7 @@ executable project0-exe
                -Werror
                -Wall
 
+               -- Extras
                -fwarn-tabs
                -fwarn-incomplete-uni-patterns
                -fwarn-incomplete-record-updates
@@ -45,8 +46,10 @@ executable project0-exe
                     , BangPatterns
                     , DeriveGeneric
                     , ScopedTypeVariables
-
+                    
+                    -- Extras
                     , NoImplicitPrelude
+                    , LiberalTypeSynonyms
 
   build-depends: base >=4 && <5
                , semigroups
