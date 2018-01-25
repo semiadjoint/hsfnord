@@ -1,6 +1,7 @@
-{ mkDerivation, async, base, bytestring, containers, deepseq
-, directory, filepath, lens, mtl, optparse-applicative, process
-, protolude, stdenv, stm, text, transformers, unix
+{ mkDerivation, array, async, base, base64-bytestring, bytestring
+, config-ini, containers, deepseq, directory, fast-logger, filepath
+, lens, mtl, optparse-applicative, process, prometheus, protolude
+, semigroups, stdenv, stm, text, transformers, unix
 , unordered-containers, vector
 }:
 mkDerivation {
@@ -10,9 +11,10 @@ mkDerivation {
   isLibrary = false;
   isExecutable = true;
   executableHaskellDepends = [
-    async base bytestring containers deepseq directory filepath lens
-    mtl optparse-applicative process protolude stm text transformers
-    unix unordered-containers vector
+    array async base base64-bytestring bytestring config-ini containers
+    deepseq directory fast-logger filepath lens mtl
+    optparse-applicative process prometheus protolude semigroups stm
+    text transformers unix unordered-containers vector
   ];
   license = stdenv.lib.licenses.bsd3;
 }
