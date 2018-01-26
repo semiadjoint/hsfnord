@@ -1,3 +1,4 @@
 #! /usr/bin/env bash
 
-bash ./scripts/reload && cabal build
+bash ./scripts/reload && \
+  bash ./scripts/build
