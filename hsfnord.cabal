@@ -81,6 +81,7 @@ executable hsfnord-exe
                , text
                , bytestring
                , base64-bytestring
+               , base16-bytestring
 
                , containers
                , unordered-containers
