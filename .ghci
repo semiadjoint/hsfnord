@@ -1,5 +1,11 @@
 :set prompt "\ESC[1;34m\STX%s\n>> \ESC[m\STX"
 
-:set -XTemplateHaskell
-:set -ddump-splices
-:module Control.Lens
+:seti -XTemplateHaskell
+:seti -ddump-splices
+:module +Protolude
+:module +Control.Lens
+:def dumpLenses (\arg -> pure $ "data XYZ; makeLenses '' " <> arg)
+:def dumpClassy (\arg -> pure $ "data XYZ; makeClassy '' " <> arg)
+:def dumpPrisms (\arg -> pure $ "data XYZ; makePrisms '' " <> arg)
+:def dumpClassyPrisms (\arg -> pure $ "data XYZ; makeClassyPrisms '' " <> arg)
+
