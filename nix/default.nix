@@ -1,9 +1,9 @@
 { mkDerivation, array, async, base, base16-bytestring
 , base64-bytestring, bytestring, config-ini, containers, deepseq
-, directory, fast-logger, filepath, hedgehog, lens, mtl
+, directory, fast-logger, filepath, hedgehog, lens, ListLike, mtl
 , optparse-applicative, process, prometheus, protolude, semigroups
-, stdenv, stm, text, transformers, unix, unordered-containers
-, vector
+, stdenv, stm, text, text-icu, transformers, unix
+, unordered-containers, utf8-string, vector
 }:
 mkDerivation {
   pname = "hsfnord";
@@ -15,8 +15,9 @@ mkDerivation {
   executableHaskellDepends = [
     array async base base16-bytestring base64-bytestring bytestring
     config-ini containers deepseq directory fast-logger filepath lens
-    mtl optparse-applicative process prometheus protolude semigroups
-    stm text transformers unix unordered-containers vector
+    ListLike mtl optparse-applicative process prometheus protolude
+    semigroups stm text text-icu transformers unix unordered-containers
+    utf8-string vector
   ];
   testHaskellDepends = [
     base containers hedgehog mtl text unordered-containers

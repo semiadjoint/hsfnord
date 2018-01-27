@@ -79,9 +79,12 @@ executable hsfnord-exe
                , async
 
                , text
+               , text-icu
                , bytestring
+               , utf8-string
                , base64-bytestring
                , base16-bytestring
+               , ListLike
 
                , containers
                , unordered-containers
