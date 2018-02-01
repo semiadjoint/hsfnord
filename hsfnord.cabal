@@ -31,27 +31,39 @@ executable hsfnord-exe
   ghc-options: -threaded
                -rtsopts=all
                -with-rtsopts=-N
+
+               -- Literate haskell preprocessor
+               -pgmL markdown-unlit
                
-               -- Make warnings into errors
-               -Werror
-
-               -- Most errors
+               -- Sanity check GHC
+               -dcore-lint
+               
                -Wall
-
-               -- Extra errors
-               -fwarn-tabs
                -fwarn-incomplete-uni-patterns
                -fwarn-incomplete-record-updates
+               -fwarn-missing-import-lists
                -fwarn-monomorphism-restriction
                -fwarn-implicit-prelude
                -fwarn-missing-local-signatures
-               -fwarn-missing-import-lists
-               -fhide-source-paths
+               -fwarn-missing-exported-signatures
+               -fwarn-missing-home-modules
+               -fwarn-identities
+               -fwarn-redundant-constraints
                
-               -- Turn back into warnings
+               -- Future-proofing
+               -Wcompat
+
+               -- Make warnings fatal
+               -Werror
+
+               -- Turn back into non-fatal warnings
                -Wwarn=missing-local-signatures
                -Wwarn=missing-import-lists
                -Wwarn=missing-home-modules
+
+               -- Less noise
+               -fhide-source-paths
+               
 
   default-extensions: OverloadedStrings
                       FlexibleContexts
@@ -72,6 +84,7 @@ executable hsfnord-exe
                       LambdaCase
                       MultiWayIf
                       BinaryLiterals
+                      InstanceSigs
 
   build-depends: base >=4 && <5
                , semigroups
