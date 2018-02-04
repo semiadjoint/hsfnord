@@ -4,21 +4,47 @@ a starter template for haskell projects
 ## use it 
 
 Install nixpkgs:
-```shell
+```sh
 $ curl https://nixos.org/nix/install | sh
 ```
 Install some tools:
-```shell
+```sh
 $ nix-env -i cabal-install entr silver-searcher
 ```
-Configure your cabal, compile, and watch for changes:
-```shell
-bash ./scripts/restart
+Get started right away with:
+```sh
+$ bash ./scripts/restart
+```
+
+Configure cabal with your nix env with:
+```sh
+$ bash ./scripts/reload
+```
+
+Compile the project with:
+```sh
+$ bash ./scripts/build
+```
+
+Recompile upon save with:
+```sh
+$ bash ./scripts/watch
 ```
 
 ## (optional) using literate markdown
 Install a tool for translating markdown to literate haskell:
-```shell
+```sh
 $ nix-env -iA nixpkgs.haskellPackages.markdown-unlit
 ```
-Create a symlink to your markdown file. It should have an .lhs extension.
+Create a symlink to your markdown file. It should have an .lhs extension:
+```sh
+$ ln -s Main.md Main.lhs
+```
+Run with:
+```sh
+$ runghc -pgmL markdown-unlit Main.md
+```
+Or recompile on change with:
+```sh
+$ bash ./scripts/watch
+```
