@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-exec ag -g hs$ | \
+exec ag -g "(hs$|lhs$|md$)" ./src ./test | \
   entr -s 'echo && \
           echo && \
           cabal build && \
