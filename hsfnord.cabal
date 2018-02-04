@@ -31,6 +31,9 @@ executable hsfnord-exe
   ghc-options: -threaded
                -rtsopts=all
                -with-rtsopts=-N
+               
+               -- Change to 1 or 2 for optimizations.
+               -O0
 
                -- Literate haskell preprocessor
                -pgmL markdown-unlit
@@ -121,6 +124,8 @@ executable hsfnord-exe
                , prometheus
 
                , protolude
+               
+               
 
 test-suite hsfnord-test
   type: exitcode-stdio-1.0
